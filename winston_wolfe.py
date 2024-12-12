@@ -65,7 +65,8 @@ def get_citystate(item):
 
 
 # Apply our function to each cell in our dataframe
-TOWNS_DF = TOWNS_DF.applymap(get_citystate)
+#TOWNS_DF = TOWNS_DF.applymap(get_citystate)  # DataFrame.applymap has been deprecated
+TOWNS_DF = TOWNS_DF.map(get_citystate)
 
 # Was TXT but probably CSV is a lot more useful
 TOWNS_DF.to_csv('Output/university_towns.csv', header='column_names')
